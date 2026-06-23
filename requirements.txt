@@ -1,0 +1,68 @@
+# LangChain Ecosystem
+langchain
+langchain-core
+langchain-community
+langchain-openai
+
+# LangGraph
+langgraph
+
+# MCP
+fastmcp
+
+# LiteLLM Gateway
+litellm
+
+# Vector Database
+chromadb
+
+# Embeddings & Tokenization
+tiktoken
+
+# LangSmith
+langsmith
+
+# Environment Variables
+python-dotenv
+
+# Data Validation
+pydantic
+
+# HTTP Requests
+requests
+
+# Async Support
+httpx
+
+# JSON Handling
+orjson
+
+# Logging
+loguru
+
+# Retry Logic
+tenacity
+
+# Testing
+pytest
+
+# Optional Data Processing
+pandas
+
+# Document Loaders
+pypdf
+
+# Markdown Processing
+markdown
+
+# GitHub Integration
+PyGithub
+
+# Jira Integration
+jira
+
+# Slack Integration
+slack_sdk
+
+# Confluence Integration
+atlassian-python-api
