@@ -66,3 +66,6 @@ slack_sdk
 
 # Confluence Integration
 atlassian-python-api
+
+#hugging face 
+huggingface_hub
