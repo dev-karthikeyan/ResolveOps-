@@ -1,6 +1,6 @@
 from pydantic import BaseModel , Field
 
-class solutionschema(BaseModel) :
+class SolutionSchema(BaseModel) :
     root_cause : str = Field(
         ...,
         description= "idenfied the root cause of the problem"

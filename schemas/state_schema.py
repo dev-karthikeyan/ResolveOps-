@@ -1,36 +1,21 @@
-from typing import TypedDict , List , Optional
+from typing import TypedDict, Optional
 
-class ResolveOpsState(TypedDict) :
+class ResolveOpsState(TypedDict):
 
-    # Ticket information
-    ticket_id : str 
-    tickt_title : str 
-    tickt_discription : str
+    ticket: dict
 
-    # Classification
-    category: Optional[str]
-    priority: Optional[str]
+    classification: Optional[dict]
 
-    # RAG
-    retrieved_docs: List[str]
+    retrieved_evidence: Optional[dict]
 
-    # Investigation
-    investigation_notes: List[str]
+    investigation: Optional[dict]
 
-    # Root Cause
-    root_cause: Optional[str]
+    root_cause: Optional[dict]
 
-    # Reflection
-    reflection_feedback: Optional[str]
+    reflection: Optional[dict]
 
-    # Solution
-    solution: Optional[str]
+    solution: Optional[dict]
 
-    # Approval
     approved: Optional[bool]
 
-    # Jira Update
-    jira_comment: Optional[str]
-
-    # Workflow Status
     status: Optional[str]
