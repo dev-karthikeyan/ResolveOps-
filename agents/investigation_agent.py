@@ -20,16 +20,14 @@ def investigation_agent (state) :
 )
 
     response = invoke_with_fallback_model(
-        task="investigation",
-        prompt=prompt,
-    )
-
+        
+        task = "investigation" ,
+        prompt = prompt
+)
     parser = JsonOutputParser()
-
-    investigation = parser.parse(
-        response.content
-    )
+    
+    investigation = parser.parse(response.content)
 
     state["investigation"] = investigation
 
-    return state
+    return state 
