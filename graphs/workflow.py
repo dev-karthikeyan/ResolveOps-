@@ -41,4 +41,4 @@ builder.add_edge("jira_update", "slack_notification")
 builder.add_edge("slack_notification", END)
 
 
-workflow = builder.compile()
+graph = builder.compile()

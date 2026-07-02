@@ -1,12 +1,12 @@
 
-from agents import investigation_agent
-from agents import slack_notification_agent
-from agents import jira_update_agent
-from agents import solution_agent
-from agents import rag_retrieval_agent
-from agents import root_cause_agent
-from agents import ticket_classifier_agent
-from agents import reflection_agent
+from agents.ticket_classifier_agent import ticket_classifier_agent
+from agents.rag_retrieval_agent import rag_retrieval_agent
+from agents.investigation_agent import investigation_agent
+from agents.root_cause_agent import root_cause_agent
+from agents.reflection_agent import reflection_agent
+from agents.solution_agent import solution_agent
+from agents.jira_update_agent import jira_update_agent
+from agents.slack_notification_agent import slack_notification_agent
 
 classifier_node = ticket_classifier_agent
 
@@ -22,7 +22,6 @@ solution_node = solution_agent
 
 jira_update_node = jira_update_agent
 
-slack_notification_node = slack_notification_agent
-
+slack_notification_node = slack_notification_agent 
 
 
