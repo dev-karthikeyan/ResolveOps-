@@ -17,7 +17,7 @@ def slack_notification_agent(state):
     solution = state["solution"]
 
     message = f"""
-🚨 Incident Resolved
+  Incident Resolved
 
 Ticket ID: {ticket["ticket_id"]}
 Title: {ticket["title"]}
@@ -32,7 +32,7 @@ Confidence:
 {solution["confidence"]:.2f}
 
 Jira Status:
-Updated Successfully ✅
+Updated Successfully 
 """
 
     result = send_slack_notification(message)
