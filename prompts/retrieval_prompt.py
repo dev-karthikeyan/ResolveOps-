@@ -71,7 +71,7 @@ Rules
 Return ONLY valid JSON
 -----------------------------------------------------------------------
 
-{
+{{
     "relevant_evidence_summary": "<concise technical summary>",
 
     "evidence_sources": [
@@ -102,9 +102,9 @@ Return ONLY valid JSON
         "<missing information>"
     ],
 
-    "evidence_quality": {
+    "evidence_quality": {{
         "confidence": <0.0-1.0>,
         "completeness": "<Low | Medium | High>"
-    }
-}
+    }}
+}}
 """

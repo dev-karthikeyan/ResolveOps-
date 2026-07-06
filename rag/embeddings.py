@@ -8,8 +8,7 @@ class EmbeddingModel :
           
             model_name = model_name ,
             model_kwargs = {"device" : "cpu"} ,
-            modelencode_kwargs = {"normalize_embeddings" : True}
-)
+            encode_kwargs={"normalize_embeddings": True})
 
     def embed_documents(self,documents : list[str]) :
         return self.model.embed_documents(documents)

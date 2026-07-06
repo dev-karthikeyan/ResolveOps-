@@ -59,7 +59,7 @@ class SlackTool:
 
         return self.send_message(
             channel_id,
-            f"🚨 Incident Summary\n\n{summary}",
+            f" Incident Summary\n\n{summary}",
         )
 
     def send_resolution(
@@ -73,7 +73,7 @@ class SlackTool:
 
         return self.send_message(
             channel_id,
-            f"✅ Incident Resolved\n\n{resolution}",
+            f" Incident Resolved\n\n{resolution}",
         )
 
     def upload_file(
