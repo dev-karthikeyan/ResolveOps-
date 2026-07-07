@@ -124,3 +124,39 @@ class JiraTool:
             issue_key,
             account_id,
         )
+
+_jira_tool_instance = None
+
+
+def _get_jira_tool() -> JiraTool:
+    global _jira_tool_instance
+
+    if _jira_tool_instance is None:
+        _jira_tool_instance = JiraTool()
+
+    return _jira_tool_instance
+
+
+def update_jira_ticket(ticket_id: str, comment: str) -> Dict[str, Any]:
+    """
+    Add a resolution comment to a Jira ticket.
+    Wrapper function used by jira_update_agent.
+    """
+
+    try:
+        jira_tool = _get_jira_tool()
+
+        jira_tool.add_comment(
+            issue_key=ticket_id,
+            comment=comment,
+        )
+
+        return {"success": True, "ticket_id": ticket_id}
+
+    except Exception as error:
+
+        return {
+            "success": False,
+            "ticket_id": ticket_id,
+            "error": str(error),
+        }   

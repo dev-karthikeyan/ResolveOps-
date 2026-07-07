@@ -103,3 +103,44 @@ class SlackTool:
                 "success": False,
                 "error": str(e),
             }
+_slack_tool_instance = None
+
+
+def _get_slack_tool() -> SlackTool:
+    global _slack_tool_instance
+
+    if _slack_tool_instance is None:
+        _slack_tool_instance = SlackTool()
+
+    return _slack_tool_instance
+
+
+def send_slack_notification(message: str) -> dict:
+    """
+    Send a notification to the default Slack channel (from .env).
+    Wrapper function used by slack_notification_agent.
+    """
+
+    channel_id = os.getenv("SLACK_CHANNEL_ID")
+
+    if not channel_id:
+        return {
+            "success": False,
+            "error": "SLACK_CHANNEL_ID not found in .env",
+        }
+
+    try:
+        slack_tool = _get_slack_tool()
+
+        return slack_tool.send_message(
+            channel_id=channel_id,
+            message=message,
+        )
+
+    except Exception as error:
+
+        return {
+            "success": False,
+            "error": str(error),
+        }            
+

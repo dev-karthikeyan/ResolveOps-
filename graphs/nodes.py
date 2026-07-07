@@ -7,6 +7,11 @@ from agents.reflection_agent import reflection_agent
 from agents.solution_agent import solution_agent
 from agents.jira_update_agent import jira_update_agent
 from agents.slack_notification_agent import slack_notification_agent
+from middleware.input_middleware import process_input
+from middleware.output_middleware import process_output
+
+input_middleware_node = process_input
+output_middleware_node = process_output
 
 classifier_node = ticket_classifier_agent
 
