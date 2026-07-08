@@ -16,10 +16,11 @@ def jira_update_agent(state) :
     result = update_jira_ticket(
         ticket_id=ticket["ticket_id"],
         comment=solution["jira_comment"],
-)
+    )
+
+    print("JIRA RESULT:", result)
 
     state["jira_update"] = result
     state["status"] = "Jira Updated"
 
     return state
-     

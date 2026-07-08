@@ -42,7 +42,10 @@ class GitHubTool:
 
         commits = []
 
-        for commit in repo.get_commits()[:limit]:
+        for commit in repo.get_commits():
+
+            if len(commits) >= limit:
+                break
 
             commits.append(
                 {
@@ -78,7 +81,10 @@ class GitHubTool:
 
         pull_requests = []
 
-        for pr in repo.get_pulls(state=state)[:limit]:
+        for pr in repo.get_pulls(state=state):
+
+            if len(pull_requests) >= limit:
+                break
 
             pull_requests.append(
                 {
@@ -112,11 +118,14 @@ class GitHubTool:
 
         issues = []
 
-        for issue in repo.get_issues(state=state)[:limit]:
+        for issue in repo.get_issues(state=state):
 
             # Skip pull requests
             if issue.pull_request is not None:
                 continue
+
+            if len(issues) >= limit:
+                break
 
             issues.append(
                 {

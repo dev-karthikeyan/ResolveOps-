@@ -4,14 +4,16 @@ from graphs.workflow import graph
 def main():
 
     ticket = {
-        "ticket_id": "INC-1001",
+        "ticket_id": "PAY-101",  
         "title": "Payment API returns HTTP 500",
         "description": "Customers are unable to complete payments due to Internal Server Error.",
+        "repository": "dev-karthikeyan/payment-api",
         "reporter": "John Doe",
         "priority": "High",
         "status": "OPEN",
     }
 
+    
     initial_state = {
         "ticket": ticket,
         "classification": None,

@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 from langchain_mistralai import ChatMistralAI
+from langchain_huggingface import ChatHuggingFace , HuggingFaceEndpoint
 
 load_dotenv()
 
@@ -24,7 +25,14 @@ mistral_llm = ChatMistralAI(
 )
 
 
-deepseek_llm = mistral_llm
+deepseek_endpoint = HuggingFaceEndpoint(
+    repo_id="deepseek-ai/DeepSeek-R1-0528",   
+    task="conversational",
+    temperature=0,
+    provider="auto",
+)
+
+deepseek_llm = ChatHuggingFace(llm=deepseek_endpoint)
 
 
 TASK_MODEL_MAP = {
